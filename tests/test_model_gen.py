@@ -6,7 +6,7 @@ from typing import List
 import pytest
 from pydantic.main import create_model
 
-from ..jsf.parser import JSF
+from jsf.parser import JSF
 
 Object = create_model("Object")
 

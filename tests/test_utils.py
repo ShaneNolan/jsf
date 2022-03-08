@@ -1,6 +1,6 @@
 import pytest
 
-from ..jsf.schema_types.string import random_fixed_length_sentence
+from jsf.schema_types.string import random_fixed_length_sentence
 
 
 @pytest.mark.parametrize(

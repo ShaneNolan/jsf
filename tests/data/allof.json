@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "required": [
+      "messageId"
+    ],
+    "properties": {
+      "messageId": {
+        "description": "A unique reference for this message.",
+        "allOf": [
+          {
+            "title": "MessageId",
+            "description": "Unique identifier for a message.",
+            "type": "object",
+            "required": [
+              "id",
+              "dateTime",
+              "tenantId",
+              "creationDateTime"
+            ],
+            "properties": {
+              "id": {
+                "description": "Unique identifier for a transaction message. If a fraud screening request must be resent due to a network communication error, this field must contain the same value as in the original request.",
+                "type": "string"
+              },
+              "dateTime": {
+                "description": "Date and time when the message was sent to FRG.",
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        ]
+      },
+      "destinationCountry": {
+        "description": "Three (3) letter ISO country code.",
+        "type": "string"
+      }
+    },
+    "$schema": "http://json-schema.org/schema#"
+  }

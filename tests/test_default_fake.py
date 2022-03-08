@@ -1,7 +1,7 @@
 import json
 import re
 
-from ..jsf.parser import JSF
+from jsf.parser import JSF
 
 
 def test_fake_boolean(TestData):

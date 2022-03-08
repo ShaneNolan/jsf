@@ -112,8 +112,12 @@ class JSF:
             cls.name = name
             cls.path = path
             return cls
-        else:
-            raise ValueError(f"Cannot parse schema {repr(schema)}")  # pragma: no cover
+        elif 'allOf' in schema:
+            return self.__parse_object(name, path, schema['allOf'][0])
+        elif 'properties' in schema:
+            return self.__parse_object(name, path, schema)
+        
+        raise ValueError(f"Cannot parse schema {repr(schema)}")  # pragma: no cover
 
     def _parse(self, schema: Dict[str, Any]) -> AllTypes:
         for name, definition in schema.get("definitions", {}).items():

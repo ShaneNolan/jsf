@@ -17,3 +17,6 @@ def main(
     ),
 ):
     JSF.from_json(schema).to_json(instance)
+
+if __name__ == '__main__':
+    main()

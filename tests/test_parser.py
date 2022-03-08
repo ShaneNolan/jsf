@@ -2,8 +2,8 @@ import json
 
 import pytest
 
-from ..jsf.parser import JSF
-from ..jsf.schema_types import *
+from jsf.parser import JSF
+from jsf.schema_types import *
 
 
 @pytest.mark.parametrize(
@@ -73,3 +73,14 @@ def test_nested_object_ref(TestData):
     assert {prop.name: type(prop) for prop in p.root.properties} == expected_types
     expected_types = {"birthday": String, "email": String, "name": String, "id": Integer}
     assert {prop.name: type(prop) for prop in p.root.properties[0].properties} == expected_types
+
+def test_allOf_object(TestData):
+    with open(TestData / f'allof.json', 'r') as file:
+        schema = json.load(file)
+    p = JSF(schema)
+
+    assert isinstance(p.root, Object)
+    assert hasattr(p.root, "properties")
+    assert hasattr(p.root.properties[0], "properties")
+    assert type(p.root.properties[1]) == String
+

@@ -1,6 +1,6 @@
 # Application
 *.json
-!src/tests/data/*.json
+!tests/data/*.json
 TODO.md
 
 # MacOS
@@ -171,3 +171,5 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+test.py

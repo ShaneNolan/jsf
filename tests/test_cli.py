@@ -4,7 +4,7 @@ from pathlib import Path
 from jsonschema import validate
 from typer.testing import CliRunner
 
-from ..jsf.cli import app
+from jsf.cli import app
 
 runner = CliRunner()
 

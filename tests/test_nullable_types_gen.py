@@ -1,6 +1,6 @@
 import json
 
-from ..jsf.parser import JSF
+from jsf.parser import JSF
 
 
 def test_string_null_gen(TestData):
