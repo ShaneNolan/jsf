@@ -1,0 +1,36 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Testing"
+    },
+    "components": {
+        "schemas": {
+            "Example": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "type",
+                    "id"
+                ],
+                "properties": {
+                    "destinationCountry": {
+                        "description": "Three (3) letter country code.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "The type.",
+                        "type": "string",
+                        "enum": [
+                            "One",
+                            "Two"
+                        ]
+                    },
+                    "id": {
+                        "description": "Unique identifier.",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -150,3 +150,10 @@ class JSF:
     def from_json(path: str) -> "JSF":
         with open(path, "r") as f:
             return JSF(json.load(f))
+    
+    @staticmethod
+    def from_json_with_key(path: str, key:str) -> "JSF":
+        with open(path, "r") as f:
+            specification = json.load(f)
+            schema = specification['components']['schemas'][key]
+            return JSF(schema)
